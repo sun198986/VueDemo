@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="item in movies">{{item}}</li>
+            </ul>
+        </div>
+        <script>
+           let vm = new Vue({
+                el:"#app" ,//vue 渲染开始
+              // el:document.querySelector(),
+                data:{
+                    movies:['星际穿越','大话西游','少年派','盗梦空间']
+                }//状态
+            })
+        </script>
+    </body>
+</html>

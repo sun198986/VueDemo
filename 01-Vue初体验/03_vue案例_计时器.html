@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>当前计数{{counter}}</h2>
+        <!-- <button @click="counter++">+</button>
+        <button @click="counter--">-</button> -->
+
+        <button v-on:click="add">+</button>
+        <button v-on:click="counter--">-</button>
+    </div>
+    <script>
+        //proxy
+        const app = new Vue({
+            el:"#app",
+            data:{
+                counter:0
+            },
+            methods: {
+                add:function(){
+                    this.counter++;
+                    console.log("add");
+                },
+                remove:function (){
+                    this.counter--;
+                    console.log("remove--");
+                }
+            },
+        })
+    </script>
+</body>
+</html>

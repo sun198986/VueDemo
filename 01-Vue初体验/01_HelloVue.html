@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<html>
+<head>
+    <script src="../js/vue.js"></script>
+<body>
+<div id="box">
+    {{10+201}}
+    <p>{{myName}}</p>
+</div>
+<div>
+    {{10+20}}
+</div>
+
+<script>
+    console.log("是否执行");
+    let vm = new Vue({
+        el:"#box" ,//vue 渲染开始
+        data:{
+            myName:"kervwin"
+        },//状态
+        created:function (){
+            console.log(1);
+        }
+    })
+</script>
+
+</body>
+</html>
