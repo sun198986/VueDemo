@@ -13,10 +13,26 @@ console.log(height);
 
 //webpack4打包 webpack ./src/main.js -o ./dist/bundle.js
 
-//依赖css文件
+//3.依赖css文件
 require('./css/normal.css')
 
-//依赖less文件
+//4.依赖less文件
 require('./css/special.less')
 
 document.writeln('<h2>你好啊,李银河!</h2>')
+
+//5.使用vue进行开发
+import Vue from 'vue'
+// import App from './vue/app.js'
+import App from './vue/App.vue'
+
+
+const app  = new Vue({
+  el:"#app",
+  template: `<App></App>`,
+  data:{
+  },
+  components:{
+    App
+  }
+})
