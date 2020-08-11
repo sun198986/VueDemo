@@ -1,4 +1,5 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports={
   //入口
@@ -47,7 +48,20 @@ module.exports={
             presets: ['es2015']
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        use: [ 'vue-loader']
       }
     ]
-  }
+  },
+  resolve: {
+    extensions:['.vue','.js','.css'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+    }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
