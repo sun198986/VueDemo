@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.使用setTimeout()
+    // setTimeout(()=>{
+    //     console.log('hellow world')
+    // },1000)
+
+    //resolve,reject本身又是函数
+    //链式编程
+    new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve()
+        },1000)
+    }).then(()=>{
+        setTimeout(()=>{
+            console.log('Hellow World');
+            console.log('Hellow World');
+            console.log('Hellow World');
+            console.log('Hellow World');
+
+            return new Promise((resolve,reject)=> {
+                setTimeout(() => {
+                    resolve()
+                }, 1000)
+            })
+        })
+    }).then(()=>{
+        setTimeout(()=>{
+            console.log('Hellow Vuejs');
+            console.log('Hellow Vuejs');
+            console.log('Hellow Vuejs');
+            console.log('Hellow Vuejs');
+
+            return new Promise((resolve,reject)=> {
+                setTimeout(() => {
+                    resolve()
+                }, 1000)
+            })
+        })
+    }).then(()=>{
+        setTimeout(()=>{
+            console.log('Hellow Python');
+            console.log('Hellow Python');
+            console.log('Hellow Python');
+            console.log('Hellow Python');
+        })
+    })
+
+    //什么情况下会用到Promise? 异步请求的嵌套
+
+
+</script>
+</body>
+</html>
